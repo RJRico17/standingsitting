@@ -130,13 +130,17 @@
         function setPose() {
             const messageEl = document.getElementById("message");
             const options = ["standing", "sitting", "empty"];
-            currentPose = options[Math.floor(Math.random()*3)]
-            messageEl.textContent = `${currentPose}`;
+            setTimeout(() => {
+                messageEl.textContent = "New pose is:";
+            }, 2000);
+            setTimeout(() => {
+                currentPose = options[Math.floor(Math.random()*3)]
+                messageEl.textContent = `${currentPose}`;
+            }, 4000);
         }
 
         async function toggleGame() {
-
-            setInterval(setPose, 2000)
+            setInterval(setPose, 4000)
         }
 
         async function toggleCamera() {
