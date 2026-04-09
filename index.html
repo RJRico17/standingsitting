@@ -62,7 +62,7 @@
 
         let model, webcam, labelContainer, maxPredictions;
         let isRunning = false;
-        let currentPose = "empty";
+        let currentPose = "";
         let score = 0;
 
         async function init() {
@@ -132,6 +132,7 @@
             const messageEl = document.getElementById("message");
             const options = ["standing", "sitting", "empty"];
             setTimeout(() => {
+                currentPose = '';
                 messageEl.textContent = "New pose is:";
             }, 2000);
             setTimeout(() => {
